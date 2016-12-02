@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" default-init-method="myInit" default-destroy-method="myDestroy">
+
+	<bean id="shilpa" class="org.shilpa.practicework.Triangle">
+		<property name="pointA" ref="point1"></property>
+	</bean>
+	<bean id="shilpa1" class="org.shilpa.practicework.Triangle"
+		parent="shilpa">
+		<property name="pointB" ref="point2"></property>
+		<property name="pointC" ref="point3"></property>
+	</bean>
+	<bean id="shilpa2" class="org.shilpa.practicework.Triangle"
+		parent="shilpa">
+		<property name="pointB" ref="point2">
+		</property>
+	</bean>
+	<bean id="point1" class="org.shilpa.practicework.Point">
+		<property name="x" value="0"></property>
+		<property name="y" value="0"></property>
+	</bean>
+	<bean id="point2" class="org.shilpa.practicework.Point">
+		<property name="x" value="0"></property>
+		<property name="y" value="20"></property>
+
+	</bean>
+	<bean id="point3" class="org.shilpa.practicework.Point">
+		<property name="x" value="20"></property>
+		<property name="y" value="0"></property>
+
+	</bean>
+	<bean class="org.shilpa.practicework.BeanPostProcessor1"></bean>
+</beans>
